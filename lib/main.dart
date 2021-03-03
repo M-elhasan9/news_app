@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/onboarding.dart';
+import './view/onboarding.dart';
 
 main(){
   runApp( NewsApp());
