@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/view/home_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../models/pagemodel.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoarding extends StatefulWidget {
   @override
@@ -113,7 +115,11 @@ class _OnBoardingState extends State<OnBoarding> {
                             AnimatedSmoothIndicator(
                               activeIndex: _currentIndex,
                               count: pages.length,
-                              effect: WormEffect(activeDotColor: Colors.red),
+                              effect: WormEffect(
+                                activeDotColor: Colors.red,
+                                dotWidth: 18,
+                                dotHeight: 12,
+                              ),
                             ),
                           ],
                         ),
@@ -128,7 +134,17 @@ class _OnBoardingState extends State<OnBoarding> {
                           width: double.infinity,
                           height: 42,
                           child: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    _updateSeen();
+                                    return HomeScreen();
+                                  },
+                                ),
+                              );
+                            },
                             color: Colors.red,
                             child: Text(
                               'GET STARTED',
@@ -155,5 +171,10 @@ class _OnBoardingState extends State<OnBoarding> {
         ],
       ),
     );
+  }
+
+  void _updateSeen() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('seen', true);
   }
 }
