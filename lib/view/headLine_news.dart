@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../view/home_tabs/favorites.dart';
 import '../view/home_tabs/popular.dart';
-import '../view/home_tabs/whats_new.dart';
 import '../view/navigation_drawer.dart';
 
 class HeadLineNews extends StatefulWidget {
@@ -18,6 +17,13 @@ class _HeadLineNewsState extends State<HeadLineNews>
     super.initState();
     _tabController = TabController(length: 3, vsync: this, initialIndex: 0);
   }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
 
   @override
   Widget build(BuildContext context) {
