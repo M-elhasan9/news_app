@@ -130,8 +130,8 @@ class _WhatsNewState extends State<WhatsNew> {
               image: ExactAssetImage('assets/images/1.jpg'),
               fit: BoxFit.cover,
             ),
-            width: 120.0,
-            height: 120.0,
+            width: 100.0,
+            height: 100.0,
           ),
           SizedBox(
             width: 8.0,
