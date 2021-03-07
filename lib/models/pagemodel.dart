@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class PageModel {
@@ -7,10 +6,12 @@ class PageModel {
   IconData _icon;
   String _image;
 
-  PageModel(this._title,
-      this._description,
-      this._icon,
-      this._image,);
+  PageModel(
+    this._title,
+    this._description,
+    this._icon,
+    this._image,
+  );
 
   String get image => _image;
 
