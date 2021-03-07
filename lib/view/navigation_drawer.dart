@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:news_app/view/headLine_news.dart';
+import '../view/home_screen.dart';
+import '../models/NavMenuItem.dart';
 
 class NavigationDrawer extends StatefulWidget {
   @override
@@ -7,6 +10,10 @@ class NavigationDrawer extends StatefulWidget {
 }
 
 class _NavigationDrawerState extends State<NavigationDrawer> {
+  List<NavMenuItem> navigationMenu = [
+NavMenuItem("Explore",() => HomeScreen()),
+    NavMenuItem("Headline News", ()=> HeadLineNews()),
+  ];
   List<String> navMenu = [
     'Explore',
     'Headline News',
@@ -25,17 +32,21 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
           itemBuilder: (context, position) {
             return ListTile(
               title: Text(
-                navMenu[position],
+                navigationMenu[position].title,
                 style: TextStyle(color: Colors.grey.shade700, fontSize: 20.0,),
               ),
               trailing: Icon(
                 Icons.chevron_right,
                 color: Colors.grey.shade400,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                  return navigationMenu[position].destination();
+                },),);
+              },
             );
           },
-          itemCount: navMenu.length,
+          itemCount: navigationMenu.length,
         ),
       ),
     );
