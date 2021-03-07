@@ -1,7 +1,6 @@
+class NavMenuItem {
+  String title;
+  Function destination;
 
-class NavMenuItem{
-String title;
-Function destination;
-
-NavMenuItem(this.title, this.destination);
+  NavMenuItem(this.title, this.destination);
 }
