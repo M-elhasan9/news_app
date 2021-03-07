@@ -109,7 +109,9 @@ class _WhatsNewState extends State<WhatsNew> {
                 ),
                 _drawRecentUpdateCard(Colors.deepOrange),
                 _drawRecentUpdateCard(Colors.blue),
-                SizedBox(height: 24.0,)
+                SizedBox(
+                  height: 24.0,
+                )
               ],
             ),
           ),
@@ -176,7 +178,8 @@ class _WhatsNewState extends State<WhatsNew> {
   Widget _drawSectionTitle(String title) {
     return Text(
       title,
-      style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600,fontSize: 16.0),
+      style: TextStyle(
+          color: Colors.black, fontWeight: FontWeight.w600, fontSize: 16.0),
     );
   }
 
@@ -195,7 +198,7 @@ class _WhatsNewState extends State<WhatsNew> {
             height: MediaQuery.of(context).size.height * 0.25,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 16.0,left: 16.0),
+            padding: const EdgeInsets.only(top: 16.0, left: 16.0),
             child: Container(
               padding: EdgeInsets.only(
                 left: 16.0,
@@ -213,21 +216,33 @@ class _WhatsNewState extends State<WhatsNew> {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 16.0,right: 16.0,top: 12,bottom: 6.0),
-          child: Text('Vettel is Ferrari Number One - Hamilton',style: TextStyle(
-            fontSize: 18.0,
-            fontWeight: FontWeight.w500
-          ),),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 16.0, right: 16.0, top: 12, bottom: 6.0),
+            child: Text(
+              'Vettel is Ferrari Number One - Hamilton',
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+            ),
           ),
-
-          Padding(padding: EdgeInsets.only(left: 16.0,right: 16.0,top: 8.0,bottom: 8.0),
-          child: Row(
-            children: [
-              Icon(Icons.timer,color: Colors.grey,size: 22,),
-              SizedBox(width: 6.0,),
-              Text('15 Min',style: TextStyle(color: Colors.grey,fontSize: 16.0),),
-            ],
-          ),
+          Padding(
+            padding:
+                EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0, bottom: 8.0),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.timer,
+                  color: Colors.grey,
+                  size: 22,
+                ),
+                SizedBox(
+                  width: 6.0,
+                ),
+                Text(
+                  '15 Min',
+                  style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                ),
+              ],
+            ),
           ),
         ],
       ),
