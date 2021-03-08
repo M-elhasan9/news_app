@@ -20,18 +20,15 @@ class _TwitterFeedState extends State<TwitterFeed> {
       ),
       drawer: NavigationDrawer(),
       body: ListView.builder(
+        padding: const EdgeInsets.all(8.0),
         itemBuilder: (context, position) {
           return Card(
+            color: Colors.blue.shade50,
             child: Column(
               children: [
                 _cardHeader(),
                 _cardBody(),
-                Divider(
-                  thickness: 0.5,
-                  color: Colors.grey,
-                  indent: MediaQuery.of(context).size.width * 0.1,
-                  endIndent: MediaQuery.of(context).size.width * 0.1,
-                ),
+                _drawLine(),
                 _cardFooter(),
               ],
             ),
@@ -57,14 +54,30 @@ class _TwitterFeedState extends State<TwitterFeed> {
           children: [
             Row(
               children: [
-                Text('Christina Meyers'),
-                Text('@ch_meyers'),
+                Text(
+                  'Christina Meyers',
+                  style: TextStyle(
+                    color: Colors.grey.shade900,
+                    fontSize: 15.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  width: 12.0,
+                ),
+                Text(
+                  '@ch_meyers',
+                  style: TextStyle(color: Colors.grey),
+                ),
               ],
             ),
             SizedBox(
               height: 8.0,
             ),
-            Text('Fri, 12 May 2017 . 14.30'),
+            Text(
+              'Fri, 12 May 2017 . 14.30',
+              style: TextStyle(color: Colors.grey),
+            ),
           ],
         ),
       ],
@@ -80,7 +93,7 @@ class _TwitterFeedState extends State<TwitterFeed> {
       ),
       child: Text(
         'We also talk about the future of work as the robots advance, and we ask whether a retro phone',
-        style: TextStyle(height: 1.2),
+        style: TextStyle(height: 1.2,fontSize: 15.0),
       ),
     );
   }
@@ -94,19 +107,28 @@ class _TwitterFeedState extends State<TwitterFeed> {
           Row(
             children: [
               IconButton(
-                icon: Icon(Icons.repeat),
+                icon: Icon(
+                  Icons.repeat,
+                  color: Colors.blue,
+                ),
                 onPressed: () {},
               ),
-              Text('25'),
+              Text(
+                '25',
+                style: TextStyle(color: Colors.grey),
+              ),
             ],
           ),
           Row(
             children: [
-              FlatButton(
+              TextButton(
                 onPressed: () {},
-                child: Text('SHARE'),
+                child: Text(
+                  'SHARE',
+                  style: TextStyle(color: Colors.redAccent),
+                ),
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () {},
                 child: Text('OPEN'),
               ),
@@ -114,6 +136,14 @@ class _TwitterFeedState extends State<TwitterFeed> {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _drawLine() {
+    return Container(
+      height: 1,
+      color: Colors.grey.shade300,
+      margin: EdgeInsets.only(top: 8.0),
     );
   }
 }
