@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../view/navigation_drawer.dart';
+import 'package:news_app/view/navigation_drawer.dart';
 
 class TwitterFeed extends StatefulWidget {
   @override

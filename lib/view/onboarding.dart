@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/view/home_screen.dart';
+import '../view/home_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../models/pagemodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,7 +15,7 @@ class _OnBoardingState extends State<OnBoarding> {
   List<PageModel> pages;
 
   void _addPages() {
-    pages = List<PageModel>();
+    pages = [];
     pages.add(
       PageModel(
         'Welcome!',
@@ -133,7 +133,7 @@ class _OnBoardingState extends State<OnBoarding> {
                         child: SizedBox(
                           width: double.infinity,
                           height: 42,
-                          child: RaisedButton(
+                          child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
                                 context,
@@ -145,13 +145,16 @@ class _OnBoardingState extends State<OnBoarding> {
                                 ),
                               );
                             },
-                            color: Colors.red,
                             child: Text(
                               'GET STARTED',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                   letterSpacing: 1.5),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.red,
+                              onPrimary: Colors.white,
                             ),
                           ),
                         ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../view/navigation_drawer.dart';
+import '../navigation_drawer.dart';
 class FacebookFeeds extends StatefulWidget {
   @override
   _FacebookFeedsState createState() => _FacebookFeedsState();

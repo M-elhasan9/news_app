@@ -91,7 +91,8 @@ class _HomeScreenState extends State<HomeScreen>
       },
       onSelected: (PopOutMenu menu) {
         //TODO:
-      },icon: Icon(Icons.more_vert),
+      },
+      icon: Icon(Icons.more_vert),
     );
   }
 }

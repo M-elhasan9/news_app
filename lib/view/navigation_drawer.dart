@@ -1,8 +1,8 @@
 import'package:flutter/material.dart';
-import '../view/facebook_feeds.dart';
-import '../view/instagram_feed.dart';
+import '../view/feeds/facebook_feeds.dart';
+import '../view/feeds/instagram_feed.dart';
+import '../view/feeds/twitter_feed.dart';
 import '../view/headLine_news.dart';
-import '../view/twitter_feed.dart';
 import '../view/home_screen.dart';
 import '../models/NavMenuItem.dart';
 
