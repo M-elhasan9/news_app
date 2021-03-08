@@ -9,6 +9,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
+enum PopOutMenu { HELP, ABOUT, CONNECT, SETTINGS }
+
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
@@ -34,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen>
         centerTitle: false,
         actions: [
           IconButton(icon: Icon(Icons.search), onPressed: () {}),
-          IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+          _popOutMenu(context),
         ],
         bottom: TabBar(
           tabs: [
@@ -62,6 +64,34 @@ class _HomeScreenState extends State<HomeScreen>
           controller: _tabController,
         ),
       ),
+    );
+  }
+
+  Widget _popOutMenu(BuildContext context) {
+    return PopupMenuButton<PopOutMenu>(
+      itemBuilder: (context) {
+        return [
+          PopupMenuItem<PopOutMenu>(
+            child: Text('ABOUT'),
+            value: PopOutMenu.ABOUT,
+          ),
+          PopupMenuItem<PopOutMenu>(
+            child: Text('HELP'),
+            value: PopOutMenu.HELP,
+          ),
+          PopupMenuItem<PopOutMenu>(
+            child: Text('CONNECT'),
+            value: PopOutMenu.CONNECT,
+          ),
+          PopupMenuItem<PopOutMenu>(
+            child: Text('SETTINGS'),
+            value: PopOutMenu.SETTINGS,
+          ),
+        ];
+      },
+      onSelected: (PopOutMenu menu) {
+        //TODO:
+      },icon: Icon(Icons.more_vert),
     );
   }
 }
