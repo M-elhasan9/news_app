@@ -12,7 +12,7 @@ class _TwitterFeedState extends State<TwitterFeed> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Twitter Feed'),
+        title: Text('Twitter Feeds'),
         centerTitle: false,
         actions: [
           IconButton(icon: Icon(Icons.search), onPressed: () {}),
@@ -93,7 +93,7 @@ class _TwitterFeedState extends State<TwitterFeed> {
       ),
       child: Text(
         'We also talk about the future of work as the robots advance, and we ask whether a retro phone',
-        style: TextStyle(height: 1.2,fontSize: 15.0),
+        style: TextStyle(height: 1.2, fontSize: 15.0),
       ),
     );
   }
